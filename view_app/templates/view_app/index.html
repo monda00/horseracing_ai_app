@@ -1,0 +1,9 @@
+{% if latest_race_list %}
+    <ul>
+    {% for race in latest_race_list %}
+        <li>This is Race.</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No races are available.</p>
+{% endif %}
