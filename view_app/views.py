@@ -1,5 +1,7 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
+
+from .models import Race
 
 def index(request):
     latest_race_list = Race.objects.order_by('-race_date')[:5]
