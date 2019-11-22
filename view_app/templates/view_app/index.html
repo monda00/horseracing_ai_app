@@ -1,13 +1,16 @@
 {% extends '../base.html' %}
 
 {% block content %}
-{% if latest_race_list %}
-    <ul>
-    {% for race in latest_race_list %}
-      <li>{{ race }}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No races are available.</p>
-{% endif %}
+<table border="1">
+  <tr>
+    <th>月日</th>
+    <th>レース名</th>
+  </tr>
+  {% for race in latest_race_list %}
+  <tr>
+    <td>{{ race.race_name }}</td>
+    <td>{{ race.race_date }}</td>
+  </tr>
+  {% endfor %}
+</table>
 {% endblock %}
