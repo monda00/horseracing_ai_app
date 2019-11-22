@@ -1,16 +1,24 @@
-{% extends '../base.html' %}
+{% extends 'base.html' %}
+
+{% block title %}レース一覧{% endblock title %}
 
 {% block content %}
-<table border="1">
-  <tr>
-    <th>月日</th>
-    <th>レース名</th>
-  </tr>
+<h4 class="mt-4 border-bottom">レース一覧</h4>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th  scope="col">月日</th>
+      <th  scope="col">レース名</th>
+    </tr>
+  </thead>
+  <tbody>
   {% for race in latest_race_list %}
   <tr>
+    <th score="row">{{ race.race_date }}</td>
     <td>{{ race.race_name }}</td>
-    <td>{{ race.race_date }}</td>
+    <td><a href="" class="btn btn-outline-primary btn-sm">予測</a></td>
   </tr>
   {% endfor %}
+  </tbody>
 </table>
 {% endblock %}
