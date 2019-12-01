@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Race
 
 def index(request):
-    return HttpResponse("Hello, world. Horse Racing AI App.")
+    latest_race_list = Race.objects.order_by('-race_date')
+    context = {'latest_race_list': latest_race_list,}
+    return render(request, 'view_app/index.html', context)
 
