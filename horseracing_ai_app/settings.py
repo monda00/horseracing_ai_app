@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'predict_model.apps.PredictModelConfig',
     'view_app.apps.ViewAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
