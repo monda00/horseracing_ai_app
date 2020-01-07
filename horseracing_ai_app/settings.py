@@ -25,7 +25,7 @@ SECRET_KEY = 'ibnl)@xu1t$l_0(4_al$e7&%$@-r^(@nw2ym^asve=t4d^@byz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

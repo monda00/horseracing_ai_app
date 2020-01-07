@@ -1,3 +1,5 @@
 from django.shortcuts import render
+from .models import PredictModel
 
-# Create your views here.
+def result(request, race_id):
+    return render(request, 'result')
