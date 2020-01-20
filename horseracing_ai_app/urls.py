@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('result/<str:race_id>/', include('predict_model.urls')),
+    path('result/', include('predict_model.urls')),
     path('index/', include('view_app.urls')),
     path('admin/', admin.site.urls),
 ]
