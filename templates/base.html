@@ -13,6 +13,13 @@
   </head>
 
   <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="container">
+        <a href="{% url 'view_app:index' %}">Top<a>
+      </div>
+    </nav>
+
     <div class="container">
     {% block content %}
       {{ content }}
