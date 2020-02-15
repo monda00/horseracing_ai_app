@@ -7,7 +7,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('view_app', '0001_initial'),
+        ('races', '0001_initial'),
     ]
 
     operations = [

@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('view_app', '0002_race_race_date'),
+        ('races', '0002_race_race_date'),
     ]
 
     operations = [

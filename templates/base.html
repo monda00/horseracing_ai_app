@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="{% static 'view_app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'races/css/bootstrap.min.css' %}">
     {% block extra_css %}{% endblock %}
   </head>
 
@@ -16,7 +16,7 @@
     <!-- Navigation -->
     <nav>
       <div class="container">
-        <a href="{% url 'view_app:index' %}">Top<a>
+        <a href="{% url 'races:index' %}">Top<a>
       </div>
     </nav>
 
@@ -27,8 +27,8 @@
     </div>
 
     <!-- jQuery -->
-    <script src="{% static 'view_app/js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'view_app/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'races/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'races/js/bootstrap.bundle.min.js' %}"></script>
     {% block extra_js %}{% endblock %}
   </body>
 
