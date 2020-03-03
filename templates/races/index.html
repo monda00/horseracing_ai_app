@@ -14,9 +14,9 @@
   <tbody>
   {% for race in latest_race_list %}
   <tr>
-    <th score="row">{{ race.race_date }}</td>
-    <td>{{ race.race_name }}</td>
-    <td><a href="{% url 'predict_model:result' race.race_id %}" class="btn btn-outline-primary btn-sm">予測</a></td>
+    <th score="row">{{ race.date }}</td>
+    <td>{{ race.name }}</td>
+    <td><a href="" class="btn btn-outline-primary btn-sm">予測</a></td>
   </tr>
   {% endfor %}
   </tbody>
