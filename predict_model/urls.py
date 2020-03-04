@@ -1,8 +1,7 @@
 from django.urls import path
-from rest_framework import routers
-from . import views
+from .views import Predict
 
 app_name = 'predict_model'
 urlpatterns = [
-    path('predict/', views.Predict.as_view(), name='predict'),
+    path('predict/', Predict.as_view(), name='predict'),
 ]
