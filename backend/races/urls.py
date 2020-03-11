@@ -1,8 +1,8 @@
 from django.urls import path
-
-from . import views
+from .views import ListRaces, DetailRace
 
 app_name = 'races'
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', ListRaces.as_view()),
+    path('<int:pk>/', DetailRace.as_view()),
 ]

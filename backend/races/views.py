@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from rest_framework import generics
 from .models import Race
+from .serializers import RaceSerializer
 
-def index(request):
-    latest_race_list = Race.objects.order_by('-date')
-    context = {'latest_race_list': latest_race_list,}
-    return render(request, 'races/index.html', context)
+class ListRaces(generics.ListAPIView):
+    queryset = Race.objects.all()
+    serializer_class = RaceSerializer
 
+class DetailRace(generics.RetrieveAPIView):
+    queryset = Race.objects.all()
+    serializer_class = RaceSerializer
