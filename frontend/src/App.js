@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class App extends Component {
+function Result(props) {
+  return (
+    <button className="resutl" onClick={props.onClick}>
+      {props.value}
+    </button>
+  )
+}
+
+class Race extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,18 +37,27 @@ class App extends Component {
   }
 
   getResult(race_id) {
-    axios
-      .post('http://localhost:8000/api/predict', {
+    return axios
+      .post('http://localhost:8000/api/predict/', {
         reqMsg: race_id
       })
       .then(res => {
-        this.setState({
-          reaces: this.state.races,
-          result: res.data });
+        console.log(res.data);
       })
       .catch(err => {
         console.log(err);
       })
+  }
+
+  handleClick(race_id) {
+    this.state.result[race_id] = this.getResult(race_id);
+  }
+
+  renderResult(race_id) {
+    return <Result
+      value={this.state.result[race_id]}
+      onClick={() => this.handleClick(race_id)}
+    />;
   }
 
   render() {
@@ -51,7 +68,7 @@ class App extends Component {
             <h1>{item.name}</h1>
             <p>{item.date}</p>
             <p>{item.result}</p>
-            <p>{this.getResult(item.name)}</p>
+            <p>{this.renderResult(item.name)}</p>
           </div>
         ))}
       </div>
@@ -59,5 +76,5 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Race;
 
