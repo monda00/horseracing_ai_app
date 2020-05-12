@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'races',
     'predictmodel',
     'frontend',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
