@@ -4,8 +4,8 @@
   "description": "競馬予測AIアプリ",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development ./src/index.js --output ./static/frontend/main.js",
-    "build": "webpack --mode production ./src/index.js --output ./static/frontend/main.js"
+    "dev": "webpack --mode development --watch ./horseraceai/frontend/src/index.js --output ./horseraceai/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./horseraceai/frontend/src/index.js --output ./horseraceai/frontend/static/frontend/main.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5",
     "prettier-quick": "0.0.5",
+    "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
