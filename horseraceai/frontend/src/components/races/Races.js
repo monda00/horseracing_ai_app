@@ -1,10 +1,16 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 
-export class Races extends PureComponent {
+import Race from './Race';
+
+export class Races extends Component {
   render() {
     return (
       <div>
-        <h1>Races</h1>
+        <Race name="hoge" date="xxxx/xx/xx" result="win" />
+        <Race name="hoge" date="xxxx/xx/xx" result="win" />
+        <Race name="hoge" date="xxxx/xx/xx" result="win" />
+        <Race name="hoge" date="xxxx/xx/xx" result="win" />
+        <Race name="hoge" date="xxxx/xx/xx" result="win" />
       </div>
     );
   }

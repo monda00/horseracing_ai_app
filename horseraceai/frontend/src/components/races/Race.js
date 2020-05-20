@@ -1,5 +1,5 @@
 import React from 'react';
-import { Predict } from './Predict';
+import Predict from './Predict';
 
 function Race(props) {
   const raceInfo = props;
