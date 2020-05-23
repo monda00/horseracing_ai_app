@@ -4,12 +4,12 @@ import Predict from './Predict';
 function Race(props) {
   const raceInfo = props.race;
   return (
-    <div>
-      <h1>{raceInfo.name}</h1>
-      <p>{raceInfo.date}</p>
-      <p>{raceInfo.result}</p>
+    <>
+      <td>{raceInfo.name}</td>
+      <td>{raceInfo.date}</td>
+      <td>{raceInfo.result}</td>
       <Predict />
-    </div>
+    </>
   );
 }
 

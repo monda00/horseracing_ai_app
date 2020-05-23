@@ -17,15 +17,15 @@ export class Races extends Component {
 
   render() {
     const listRaces = this.props.races.map((race) => (
-      <li key={race.id}>
+      <tr key={race.id}>
         <Race race={race} />
-      </li>
+      </tr>
     ));
 
     return (
       <>
         <h2>レース一覧</h2>
-        <tabele className="tabel table-striped">
+        <table className="table table-dark">
           <thead>
             <tr>
               <th>レース名</th>
@@ -35,7 +35,7 @@ export class Races extends Component {
             </tr>
           </thead>
           <tbody>{listRaces}</tbody>
-        </tabele>
+        </table>
       </>
     );
   }
