@@ -1,6 +1,7 @@
-from races.models import Race
+from .models import Race
 from rest_framework import viewsets, permissions
 from .serializers import RaceSerializer
+
 
 class RaceViewSet(viewsets.ModelViewSet):
     queryset = Race.objects.all()
