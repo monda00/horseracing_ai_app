@@ -5,12 +5,22 @@ from rest_framework.response import Response
 
 @api_view(['POST'])
 def predict_race(request):
-    data = request.data
-    name = data.get("name")
-    return Response(name)
+    input_data = set_data(request.data)
+    return Response(input_data)
 
 
 def set_data(data):
+    input_data = []
+    data = data.get('data')
+
+    for i in range(len(data)):
+        horse_data = set_horse_data(data[i])
+        input_data.append(horse_data)
+
+    return input_data
+
+
+def set_horse_data(data):
     input_data = {
         'horse_number': data.get('horse_nuber'),
         'frame_number': data.get('frame_number'),
