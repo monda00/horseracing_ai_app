@@ -1,12 +1,17 @@
+from horseraceai.settings import BASE_DIR
+
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 import numpy as np
+import tensorflow as tf
+from tensorflow import keras
 
 
 @api_view(['POST'])
 def predict_race(request):
     input_data = set_data(request.data)
+    model = load_model()
     return Response(input_data)
 
 
@@ -30,3 +35,17 @@ def set_data(data):
                            for i in range(len(data.get('data')))])
 
     return input_data
+
+
+def load_model():
+    '''
+    学習済みのモデルをインポート
+
+    Returns
+    -------
+    model : model
+    '''
+    model = keras.models.load_model(
+        BASE_DIR + '/predictmodel/keras_model/multi_input_model.h5')
+
+    return model
