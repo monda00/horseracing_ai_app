@@ -4,8 +4,8 @@ import dummyData from '../../../../dummydata/inputdata.json';
 
 export default function Predict(props) {
   const [predict, setPredict] = useState('predicting...');
-  const predictRace = (raceData) => {
-    const response = axios.post('/api/predict', raceData);
+  const predictRace = async (raceData) => {
+    const response = await axios.post('/api/predict', raceData);
     setPredict(response.data);
   };
   const makeJsonData = (raceData) => {
@@ -19,13 +19,19 @@ export default function Predict(props) {
     return jsonData;
   };
 
-  useEffect(() => {
-    predictRace(readDummyData());
-  }, []);
-
   return (
-    <div>
-      <td>hoge</td>
-    </div>
+    <>
+      <td>
+        <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={() => {
+            predictRace(readDummyData());
+          }}
+        >
+          Click
+        </button>
+      </td>
+    </>
   );
 }
