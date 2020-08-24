@@ -5,17 +5,16 @@ import dummyData from '../../../../dummydata/inputdata.json';
 export default function Predict(props) {
   const [predict, setPredict] = useState('predicting...');
   const predictRace = async (raceData) => {
+    axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+    axios.defaults.xsrfCookieName = 'csrftoken';
     const response = await axios.post('/api/predict', raceData);
     setPredict(response.data);
+    console.log(predict);
   };
   const makeJsonData = (raceData) => {
     const data = {};
     data.data = [raceData];
     const jsonData = JSON.stringify(data);
-    return jsonData;
-  };
-  const readDummyData = () => {
-    const jsonData = JSON.stringify(dummyData);
     return jsonData;
   };
 
@@ -26,7 +25,7 @@ export default function Predict(props) {
           type="button"
           className="btn btn-secondary"
           onClick={() => {
-            predictRace(readDummyData());
+            predictRace(dummyData);
           }}
         >
           Click
