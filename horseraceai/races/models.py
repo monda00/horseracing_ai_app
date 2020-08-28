@@ -2,7 +2,9 @@ from django.db import models
 
 
 class Race(models.Model):
-    # レース情報
+    '''
+    レース情報
+    '''
     race_id = models.CharField(max_length=50)
     name = models.CharField(max_length=200)
     place = models.CharField(max_length=50)
@@ -14,3 +16,17 @@ class Race(models.Model):
     weather = models.CharField(max_length=1)
     date_time = models.DateTimeField(null=True)
     result = models.CharField(max_length=200, null=True)
+
+
+class Horse(models.Model):
+    '''
+    馬情報
+    '''
+    race = models.ForeignKey(Race, on_delete=models.CASCADE)
+    horse_number = models.IntegerField()
+    frame_number = models.IntegerField()
+    age = models.IntegerField()
+    gen = models.CharField(max_length=1)
+    weight = models.IntegerField()
+    weight_diff = models.IntegerField()
+    burden_weight = models.IntegerField()
