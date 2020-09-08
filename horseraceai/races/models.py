@@ -22,7 +22,7 @@ class Horse(models.Model):
     '''
     馬情報
     '''
-    race = models.ForeignKey(Race, on_delete=models.CASCADE)
+    race_id = models.ForeignKey(Race, on_delete=models.CASCADE)
     horse_number = models.IntegerField()
     frame_number = models.IntegerField()
     age = models.IntegerField()
