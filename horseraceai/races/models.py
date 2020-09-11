@@ -5,7 +5,7 @@ class Race(models.Model):
     '''
     レース情報
     '''
-    race_id = models.CharField(max_length=50)
+    race_id = models.CharField(max_length=50, primary_key=True)
     name = models.CharField(max_length=200)
     place = models.CharField(max_length=50)
     race_horse_number = models.IntegerField()

@@ -7,6 +7,7 @@ from .models import Race, Horse
 class RaceResource(resources.ModelResource):
     class Meta:
         model = Race
+        import_id_fields = ['race_id']
         skip_unchanged = True
         report_skipped = False
 
