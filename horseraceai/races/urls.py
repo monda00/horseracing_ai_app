@@ -1,7 +1,14 @@
 from rest_framework import routers
-from .api import RaceViewSet
+from django.urls import path
+from .api import RaceViewSet, HorseViewSet, HorseDetailByRaceViewSet
 
 router = routers.DefaultRouter()
 router.register('api/races', RaceViewSet, 'races')
+router.register('api/horses', HorseViewSet, 'horses')
 
-urlpatterns = router.urls
+urlpatterns = [
+    path('api/horses/race/<str:race_id>',
+         HorseDetailByRaceViewSet.as_view(), name='race_horse'),
+]
+
+urlpatterns += router.urls
