@@ -21,7 +21,7 @@ class HorseViewSet(viewsets.ModelViewSet):
     serializer_class = HorseSerializer
 
 
-class HorseDetailByRaceViewSet(generics.ListAPIView):
+class HorseDetailByRaceView(generics.ListAPIView):
 
     def get(self, request, *args, **kwargs):
         queryset = self.get_queryset()
