@@ -6,7 +6,9 @@ function Race(props) {
   return (
     <>
       <td>{raceInfo.name}</td>
-      <td>{raceInfo.date}</td>
+      <td>{raceInfo.place}</td>
+      <td>{raceInfo.distance}</td>
+      <td>{raceInfo.date_time}</td>
       <td>{raceInfo.result}</td>
       <Predict />
     </>

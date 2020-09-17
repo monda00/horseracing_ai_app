@@ -2,6 +2,8 @@ import GET_RACES from '../actions/types';
 
 const initialState = {
   races: [],
+  totalRaces: 0,
+  itemCountPerPage: 0,
 };
 
 export default (state = initialState, action) => {
@@ -9,7 +11,9 @@ export default (state = initialState, action) => {
     case GET_RACES:
       return {
         ...state,
-        races: action.payload,
+        races: action.payload.results,
+        totalRaces: action.payload.count,
+        itemsCountPerPage: action.payload.results.length,
       };
     default:
       return state;
