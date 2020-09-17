@@ -11,7 +11,6 @@ export class Races extends Component {
     races: PropTypes.object.isRequired,
     getRaces: PropTypes.func.isRequired,
     totalRaces: PropTypes.number.isRequired,
-    itemsCountPerPage: PropTypes.number.isRequired,
   };
 
   constructor(props) {
@@ -22,14 +21,12 @@ export class Races extends Component {
   }
 
   componentDidMount() {
-    console.log(this.state.activePage);
     this.props.getRaces(this.state.activePage);
   }
 
   handlePageChange(pageNumber) {
     this.setState({ activePage: pageNumber });
-    console.log(this.state.activePage);
-    this.props.getRaces(this.state.activePage);
+    this.props.getRaces(pageNumber);
   }
 
   render() {
@@ -57,7 +54,7 @@ export class Races extends Component {
         </table>
         <Pagination
           activePage={this.state.activePage}
-          itemsCountPerPage={this.props.itemsCountPerPage}
+          itemsCountPerPage={20}
           totalItemsCount={this.props.totalRaces}
           pageRangeDisplayed={5}
           onChange={this.handlePageChange.bind(this)}
