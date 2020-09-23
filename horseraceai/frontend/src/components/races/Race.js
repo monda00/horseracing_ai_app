@@ -1,5 +1,6 @@
 import React from 'react';
 import Predict from './Predict';
+import Horses from './Horses';
 
 function Race(props) {
   const raceInfo = props.race;
@@ -11,6 +12,7 @@ function Race(props) {
       <td>{raceInfo.date_time}</td>
       <td>{raceInfo.result}</td>
       <Predict />
+      <Horses race_id={raceInfo.race_id} />
     </>
   );
 }
