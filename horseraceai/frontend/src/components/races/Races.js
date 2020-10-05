@@ -48,7 +48,6 @@ export class Races extends Component {
               <th>日付</th>
               <th>結果</th>
               <th>予測</th>
-              <th>tmp</th>
             </tr>
           </thead>
           <tbody>{listRaces}</tbody>
