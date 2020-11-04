@@ -21,6 +21,7 @@ export default function Predict(props) {
     const raceDate = new Date(race.date_time);
     const timeHour = raceDate.getHours();
     const month = raceDate.getMonth();
+    const dataLength = 18;
     let season;
     if (month >= 3 && month <= 5) {
       season = '春';
@@ -53,8 +54,24 @@ export default function Predict(props) {
       data.data[horseInd].season = season;
     }
 
-    const jsonData = JSON.stringify(data);
-    return jsonData;
+    // 足りないデータを追加
+    for (let dataInd = horses.length; dataInd < dataLength; dataInd += 1) {
+      data.data.push({});
+      for (let featureInd = 0; featureInd < inputFeatures.length; featureInd += 1) {
+        data.data[dataInd][inputFeatures[featureInd]] = 0;
+      }
+      data.data[dataInd].place = 0;
+      data.data[dataInd].race_horse_number = 0;
+      data.data[dataInd].distance = 0;
+      data.data[dataInd].clockwise = 0;
+      data.data[dataInd].field_type = 0;
+      data.data[dataInd].field_condition = 0;
+      data.data[dataInd].weather = 0;
+      data.data[dataInd].time_hour = 0;
+      data.data[dataInd].season = 0;
+    }
+
+    return data;
   };
 
   return (
