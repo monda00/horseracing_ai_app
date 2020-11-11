@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import inputFeatures from '../../const/inputFeatures';
-import dummyData from '../../../../dummydata/inputdata.json';
 
 export default function Predict(props) {
   const { race } = props;
@@ -13,7 +12,9 @@ export default function Predict(props) {
     axios.defaults.xsrfCookieName = 'csrftoken';
     const response = await axios.post('/api/predict', raceData);
     console.log(response);
+    console.log('before: ', predict);
     setPredict(response.data['win horse number']);
+    console.log('after: ', predict);
   };
 
   const makeJsonData = () => {
@@ -82,11 +83,10 @@ export default function Predict(props) {
             type="button"
             className="btn btn-secondary"
             onClick={() => {
-              const data = makeJsonData();
-              predictRace(data);
+              predictRace(makeJsonData());
             }}
           >
-            結果予測
+            予測
           </button>
         )}
       </td>

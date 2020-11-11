@@ -26,7 +26,7 @@ def predict_race(request):
     '''
     input_data = set_data(request.data)
     model = load_model()
-    win_horse = predict_win_horse(model, input_data)
+    win_horse = predict_win_horse(model, input_data)+1
 
     ret = {"win horse number": win_horse}
     return Response(ret)
