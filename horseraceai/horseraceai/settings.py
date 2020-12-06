@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'frontend',
     'rest_framework',
     'import_export',
-    'datascrapy',
 ]
 
 MIDDLEWARE = [

@@ -6,7 +6,7 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 from scrapy_djangoitem import DjangoItem
-from ..races.models import Race
+from races.models import Race
 
 
 class RaceItem(DjangoItem):

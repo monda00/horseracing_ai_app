@@ -5,7 +5,7 @@ import sys
 import os
 import django
 
-sys.path.append('../../horseraceai')
+sys.path.append('../horseraceai')
 os.environ['DJANGO_SETTINGS_MODULE'] = 'horseraceai.settings'
 django.setup()
 
