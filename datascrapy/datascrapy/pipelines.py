@@ -1,12 +1,18 @@
 # -*- coding: utf-8 -*-
-
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+from races.models import Race
 
 
 class DatascrapyPipeline:
+    def open_spider(self, spider):
+        '''
+        スクレイピングする起点となるレースを求める
+        '''
+        spider.start_raceid = Race.objects.all().order_by("date_time")[0]
+        print(spider.start_raceid)
+
     def process_item(self, item, spider):
+        '''
+        スクレイピングしたデータとdjangoのmodelデータから過去のレースデータを探し出す
+        '''
         item.save()
         return item
